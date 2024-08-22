@@ -84,11 +84,37 @@ const Analysis = () => {
     avgHousingInsecurityAware: 'Housing Insecurity',
     avgMentalHealthAware: 'Mental Health Treatment',
     avgHealthcareAccessAware: 'Healthcare Access',
+    foodInsecurityInadequateCount: 'Food Insecurity',
+    housingInsecurityInadequateCount: 'Housing Insecurity',
+    mentalHealthInadequateCount: 'Mental Health Treatment',
+    healthcareAccessInadequateCount: 'Healthcare Access',
+    
   };
   const maxAffectText = variableDescriptions[maxAffectVar] || 'Unknown';
   const minAffectText = variableDescriptions[minAffectVar] || 'Unknown';
   const maxAwarenessText = variableDescriptions[maxAwarenessVar] || 'Unknown';
   const minAwarenessText = variableDescriptions[minAwarenessVar] || 'Unknown';
+
+  //function to count the # of respondents that answered 4 or 5 to a subsection of question 3 and responded 'no' to the corresponding subcategory of question 5
+  const countMatches = (affectKey, adequateKey) => {
+    return surveyData.filter(survey => survey[affectKey] >= 4 && survey[adequateKey] === 'No').length;
+  };
+
+  //calculate the # of people matching the criteria for each category
+  const foodInsecurityInadequateCount = countMatches('foodInsecurityAffect', 'foodInsecurityAdequate');
+  const housingInsecurityInadequateCount = countMatches('housingInsecurityAffect', 'housingInsecurityAdequate');
+  const mentalHealthInadequateCount = countMatches('mentalHealthAffect', 'mentalHealthAdequate');
+  const healthcareAccessInadequateCount = countMatches('healthcareAccessAffect', 'healthcareAccessAdequate');
+  
+  //store the above values in an object for comparison
+  const matchesVariables = {foodInsecurityInadequateCount, housingInsecurityInadequateCount, mentalHealthInadequateCount, healthcareAccessInadequateCount}
+
+  //feed the above object into the function to find the min and max value of these. then retrieve the proper name
+  const maxInadequateVar = findMaxVariable(matchesVariables);
+  const minInadequateVar = findMinVariable(matchesVariables);
+  const maxInadequateText = variableDescriptions[maxInadequateVar] || 'Unknown';
+  const minInadequateText = variableDescriptions[minInadequateVar] || 'Unknown';
+
 
 
   return (
@@ -190,7 +216,15 @@ const Analysis = () => {
           The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with an average score of {minAwareness}.
         <br></br>Surveyed CUNY students were mostly unware about resources for {minAwarenessText}. <br></br>
         </div>
-        <div></div>
+        <div>
+          The {maxInadequateText} category had the most respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resourced.
+          <br></br>CUNY should focus on increasing widespread assistance for those who need it in this category especially.
+        </div>
+        <br></br>
+        <div>
+          The {minInadequateText} category had the least respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resources.
+          <br></br>CUNY is doing a great job of providing aid to those who need it in this category!
+        </div>
       </div>
     </div>
   );

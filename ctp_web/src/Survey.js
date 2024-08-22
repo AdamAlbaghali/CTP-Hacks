@@ -285,7 +285,7 @@ const Survey = () => {
 
         <div className="survey-section">
           <h3>
-            3. On a scale of 1-5, rate how much you are personally affected by
+            3. On a scale of 1-5, rate how much you are personally negatively affected by
             each of the following:
           </h3>
           <div className="survey-question">
