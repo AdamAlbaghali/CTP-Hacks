@@ -93,6 +93,9 @@ function AboutUs() {
                   Survey
                 </a>
               </li>
+              <a href="/analysis" className="nav-link">
+                  Analysis
+                </a>
             </ul>
           </header>
         </div>
