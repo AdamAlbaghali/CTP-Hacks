@@ -61,6 +61,9 @@ function Discussion() {
                   Survey
                 </a>
               </li>
+              <a href="/analysis" className="nav-link">
+                  Analysis
+                </a>
             </ul>
           </header>
         </div>
@@ -156,6 +159,11 @@ function Discussion() {
               <li className="nav-item">
                 <a href="/survey" className="nav-link">
                   Survey
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/analysis" className="nav-link">
+                  Analysis
                 </a>
               </li>
             </ul>
