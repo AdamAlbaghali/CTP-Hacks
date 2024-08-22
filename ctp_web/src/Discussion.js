@@ -46,7 +46,7 @@ function Discussion() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/about" className="nav-link">
+                <a href="/aboutus" className="nav-link">
                   About
                 </a>
               </li>
@@ -92,7 +92,7 @@ function Discussion() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/about" className="nav-link px-2 text-body-secondary">
+                <a href="/aboutus" className="nav-link px-2 text-body-secondary">
                   About
                 </a>
               </li>

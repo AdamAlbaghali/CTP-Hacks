@@ -46,7 +46,7 @@ function Home() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/about" className="nav-link">
+                <a href="/aboutus" className="nav-link">
                   About
                 </a>
               </li>
@@ -156,18 +156,18 @@ function Home() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link px-2 text-body-secondary">
+                <a href="/discussion" className="nav-link px-2 text-body-secondary">
                   Discussion
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link px-2 text-body-secondary">
-                  FAQs
+                <a href="/aboutus" className="nav-link px-2 text-body-secondary">
+                  About
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link px-2 text-body-secondary">
-                  About
+                <a href="/survey" className="nav-link px-2 text-body-secondary">
+                  Survey
                 </a>
               </li>
             </ul>
