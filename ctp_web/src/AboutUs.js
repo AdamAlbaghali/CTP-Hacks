@@ -40,22 +40,81 @@ function AboutUs() {
   };
 
   return (
-    <div className="about-us">
-      <h1>✨Meet the Members!✨</h1>
-      {members.map((member, index) => (
-        <div 
-          key={index} 
-          className={`about-us-item ${expandedIndex === index ? 'expanded' : ''}`}
-          onClick={() => toggleExpand(index)}
-        >
-          <img src={member.image} alt={member.name} className="about-us-image" />
-          <div className="about-us-text">
-            <h2>{member.name}</h2>
-            <p>{member.role}</p>
-            {expandedIndex === index && <p className="about-us-bio">{member.bio}</p>}
-          </div>
+    <div>
+      {/* Bootstrap CSS */}
+      <link
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+
+      {/* Custom Styles */}
+      <style>
+        {`
+          .nav-color {
+            background: #f76b8a;
+          }
+          body {
+            background: #fcfefe;
+          }
+          .nav-link {
+            color: aliceblue;
+          }
+          .custom-border-top {
+            border-top: 0.5px solid #4c4b4b; /* Change to your desired color */
+          }
+          .footer-color {
+            background: #f76b8a;
+          }
+        `}
+      </style>
+
+      {/* Nav Bar */}
+      <section id="Header" className="nav-color fixed-top">
+        <div className="container">
+          <header className="d-flex justify-content-center py-3">
+            <ul className="nav nav-pills">
+              <li className="nav-item">
+                <a href="/" className="nav-link">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/discussion" className="nav-link">
+                  Discussion
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/about" className="nav-link active">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/survey" className="nav-link">
+                  Survey
+                </a>
+              </li>
+            </ul>
+          </header>
         </div>
-      ))}
+      </section>
+
+      <div className="about-us" style={{ marginTop: '80px' }}>
+        <h1>✨Meet the Members!✨</h1>
+        {members.map((member, index) => (
+          <div 
+            key={index} 
+            className={`about-us-item ${expandedIndex === index ? 'expanded' : ''}`}
+            onClick={() => toggleExpand(index)}
+          >
+            <img src={member.image} alt={member.name} className="about-us-image" />
+            <div className="about-us-text">
+              <h2>{member.name}</h2>
+              <p>{member.role}</p>
+              {expandedIndex === index && <p className="about-us-bio">{member.bio}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
