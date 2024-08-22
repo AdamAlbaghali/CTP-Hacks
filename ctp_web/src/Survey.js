@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Survey.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Survey.css";
 
 const Survey = () => {
   const [formData, setFormData] = useState({
-    isCunyStudent: '',
-    campus: '',
-    foodInsecurity: '',
-    housingInstability: '',
-    mentalHealth: '',
-    healthcareAccess: '',
+    isCunyStudent: "",
+    campus: "",
+    foodInsecurity: "",
+    housingInstability: "",
+    mentalHealth: "",
+    healthcareAccess: "",
     awareness: {
-      foodInsecurity: '',
-      housingInstability: '',
-      mentalHealth: '',
-      healthcareAccess: '',
+      foodInsecurity: "",
+      housingInstability: "",
+      mentalHealth: "",
+      healthcareAccess: "",
     },
     adequateResources: {
-      foodInsecurity: '',
-      housingInstability: '',
-      mentalHealth: '',
-      healthcareAccess: '',
+      foodInsecurity: "",
+      housingInstability: "",
+      mentalHealth: "",
+      healthcareAccess: "",
     },
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleNestedChange = (section, field, value) => {
@@ -54,42 +57,45 @@ const Survey = () => {
       foodInsecurityAdequate: formData.adequateResources.foodInsecurity,
       housingInsecurityAdequate: formData.adequateResources.housingInstability,
       mentalHealthAdequate: formData.adequateResources.mentalHealth,
-      healthcareAccessAdequate: formData.adequateResources.healthcareAccess
+      healthcareAccessAdequate: formData.adequateResources.healthcareAccess,
     };
 
     //form submission logic, send POST request with survey data and indicate to the user if it was submitted succesfully
     try {
-      const response = await axios.post('http://localhost:3001/api/submit-survey', submissionData);
+      const response = await axios.post(
+        "http://localhost:3001/api/submit-survey",
+        submissionData
+      );
       if (response.status === 201) {
-        alert('Survey submitted successfully!');
+        alert("Survey submitted successfully!");
       } else {
-        alert('Error submitting survey')
+        alert("Error submitting survey");
       }
     } catch (error) {
-      console.error('There was an error submitting the survey:', error);
-      alert('Error submitting survey');
+      console.error("There was an error submitting the survey:", error);
+      alert("Error submitting survey");
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const surveyQuestions = document.querySelectorAll('.survey-question');
-      surveyQuestions.forEach(question => {
+      const surveyQuestions = document.querySelectorAll(".survey-question");
+      surveyQuestions.forEach((question) => {
         const rect = question.getBoundingClientRect();
         const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
         if (isVisible) {
-          question.classList.add('visible');
+          question.classList.add("visible");
         } else {
-          question.classList.remove('visible');
+          question.classList.remove("visible");
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -192,7 +198,9 @@ const Survey = () => {
       </section>
 
       <form className="survey-container" onSubmit={handleSubmit}>
-        <h2 className="text-center" style={{ color: '#f76b8a' }}>CUNY Resources Survey</h2>
+        <h2 className="text-center" style={{ color: "#f76b8a" }}>
+          CUNY Resources Survey
+        </h2>
 
         <div className="survey-question">
           <h3>1. Are you a current CUNY student?</h3>
@@ -209,137 +217,248 @@ const Survey = () => {
 
         <div className="survey-question">
           <h3>2. What is your CUNY campus?</h3>
-          <select
-            name="campus"
-            value={formData.campus}
-            onChange={handleChange}
-          >
+          <select name="campus" value={formData.campus} onChange={handleChange}>
             <option value="">Select your campus</option>
             <option value="Baruch College">Baruch College</option>
-            <option value="Borough of Manhattan Community College">Borough of Manhattan Community College</option>
-            <option value="Bronx Community College">Bronx Community College</option>
+            <option value="Borough of Manhattan Community College">
+              Borough of Manhattan Community College
+            </option>
+            <option value="Bronx Community College">
+              Bronx Community College
+            </option>
             <option value="Brooklyn College">Brooklyn College</option>
-            <option value="College of Staten Island">College of Staten Island</option>
-            <option value="Craig Newmark Graduate School of Journalism">Craig Newmark Graduate School of Journalism</option>
+            <option value="College of Staten Island">
+              College of Staten Island
+            </option>
+            <option value="Craig Newmark Graduate School of Journalism">
+              Craig Newmark Graduate School of Journalism
+            </option>
             <option value="CUNY Graduate Center">CUNY Graduate Center</option>
-            <option value="CUNY Graduate School of Public Health and Health Policy">CUNY Graduate School of Public Health and Health Policy</option>
-            <option value="CUNY School of Labor and Urban Studies">CUNY School of Labor and Urban Studies</option>
+            <option value="CUNY Graduate School of Public Health and Health Policy">
+              CUNY Graduate School of Public Health and Health Policy
+            </option>
+            <option value="CUNY School of Labor and Urban Studies">
+              CUNY School of Labor and Urban Studies
+            </option>
             <option value="CUNY School of Law">CUNY School of Law</option>
-            <option value="CUNY School of Professional Studies">CUNY School of Professional Studies</option>
-            <option value="Guttman Community College">Guttman Community College</option>
-            <option value="Hostos Community College">Hostos Community College</option>
+            <option value="CUNY School of Professional Studies">
+              CUNY School of Professional Studies
+            </option>
+            <option value="Guttman Community College">
+              Guttman Community College
+            </option>
+            <option value="Hostos Community College">
+              Hostos Community College
+            </option>
             <option value="Hunter College">Hunter College</option>
-            <option value="John Jay College of Criminal Justice">John Jay College of Criminal Justice</option>
-            <option value="Kingsborough Community College">Kingsborough Community College</option>
-            <option value="LaGuardia Community College">LaGuardia Community College</option>
+            <option value="John Jay College of Criminal Justice">
+              John Jay College of Criminal Justice
+            </option>
+            <option value="Kingsborough Community College">
+              Kingsborough Community College
+            </option>
+            <option value="LaGuardia Community College">
+              LaGuardia Community College
+            </option>
             <option value="Lehman College">Lehman College</option>
-            <option value="Macaulay Honors College">Macaulay Honors College</option>
+            <option value="Macaulay Honors College">
+              Macaulay Honors College
+            </option>
             <option value="Medgar Evers College">Medgar Evers College</option>
-            <option value="New York City College of Technology">New York City College of Technology</option>
+            <option value="New York City College of Technology">
+              New York City College of Technology
+            </option>
             <option value="Brooklyn College">Brooklyn College</option>
             <option value="Queens College">Queens College</option>
-            <option value="Queensborough Community College">Queensborough Community College</option>
-            <option value="The City College of New York">The City College of New York</option>
+            <option value="Queensborough Community College">
+              Queensborough Community College
+            </option>
+            <option value="The City College of New York">
+              The City College of New York
+            </option>
             <option value="York College">York College</option>
           </select>
         </div>
 
         <div className="survey-section">
-          <h3>3. On a scale of 1-5, rate how much you are personally affected by each of the following:</h3>
+          <h3>
+            3. On a scale of 1-5, rate how much you are personally affected by
+            each of the following:
+          </h3>
           <div className="survey-question">
             <label>3.1 Food insecurity</label>
-            <input
-              type="text"
-              name="foodInsecurity"
-              value={formData.foodInsecurity}
-              onChange={handleChange}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="foodInsecurity"
+                    value={value}
+                    checked={formData.foodInsecurity === String(value)}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>3.2 Housing instability</label>
-            <input
-              type="text"
-              name="housingInstability"
-              value={formData.housingInstability}
-              onChange={handleChange}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="housingInstability"
+                    value={value}
+                    checked={formData.housingInstability === String(value)}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>3.3 Lack of mental health treatment</label>
-            <input
-              type="text"
-              name="mentalHealth"
-              value={formData.mentalHealth}
-              onChange={handleChange}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="mentalHealth"
+                    value={value}
+                    checked={formData.mentalHealth === String(value)}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>3.4 Lack of healthcare access</label>
-            <input
-              type="text"
-              name="healthcareAccess"
-              value={formData.healthcareAccess}
-              onChange={handleChange}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="healthcareAccess"
+                    value={value}
+                    checked={formData.healthcareAccess === String(value)}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="survey-section">
-          <h3>4. On a scale of 1-5, rate how aware you are about CUNY resources for each of the following:</h3>
+          <h3>
+            4. On a scale of 1-5, rate how aware you are about CUNY resources
+            for each of the following:
+          </h3>
           <div className="survey-question">
             <label>4.1 Food insecurity</label>
-            <input
-              type="text"
-              name="awareness.foodInsecurity"
-              value={formData.awareness.foodInsecurity}
-              onChange={(e) => handleNestedChange('awareness', 'foodInsecurity', e.target.value)}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="awareness.foodInsecurity"
+                    value={value}
+                    checked={formData.awareness.foodInsecurity === value}
+                    onChange={(e) =>
+                      handleNestedChange("awareness", "foodInsecurity", value)
+                    }
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>4.2 Housing instability</label>
-            <input
-              type="text"
-              name="awareness.housingInstability"
-              value={formData.awareness.housingInstability}
-              onChange={(e) => handleNestedChange('awareness', 'housingInstability', e.target.value)}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="awareness.housingInstability"
+                    value={value}
+                    checked={formData.awareness.housingInstability === value}
+                    onChange={(e) =>
+                      handleNestedChange(
+                        "awareness",
+                        "housingInstability",
+                        value
+                      )
+                    }
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>4.3 Lack of mental health treatment</label>
-            <input
-              type="text"
-              name="awareness.mentalHealth"
-              value={formData.awareness.mentalHealth}
-              onChange={(e) => handleNestedChange('awareness', 'mentalHealth', e.target.value)}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="awareness.mentalHealth"
+                    value={value}
+                    checked={formData.awareness.mentalHealth === value}
+                    onChange={(e) =>
+                      handleNestedChange("awareness", "mentalHealth", value)
+                    }
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
           <div className="survey-question">
             <label>4.4 Lack of healthcare access</label>
-            <input
-              type="text"
-              name="awareness.healthcareAccess"
-              value={formData.awareness.healthcareAccess}
-              onChange={(e) => handleNestedChange('awareness', 'healthcareAccess', e.target.value)}
-              placeholder="Enter a number between 1 and 5"
-            />
+            <div className="radio-group">
+              {[1, 2, 3, 4, 5].map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="awareness.healthcareAccess"
+                    value={value}
+                    checked={formData.awareness.healthcareAccess === value}
+                    onChange={(e) =>
+                      handleNestedChange("awareness", "healthcareAccess", value)
+                    }
+                  />
+                  {value}
+                </label>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="survey-section">
-          <h3>5. For each of the following, would you say that your campus has adequate resources?</h3>
+          <h3>
+            5. For each of the following, would you say that your campus has
+            adequate resources?
+          </h3>
           <div className="survey-question">
             <label>5.1 Food insecurity</label>
             <select
               name="adequateResources.foodInsecurity"
               value={formData.adequateResources.foodInsecurity}
-              onChange={(e) => handleNestedChange('adequateResources', 'foodInsecurity', e.target.value)}
+              onChange={(e) =>
+                handleNestedChange(
+                  "adequateResources",
+                  "foodInsecurity",
+                  e.target.value
+                )
+              }
             >
               <option value="">Select</option>
               <option value="Yes">Yes</option>
@@ -352,7 +471,13 @@ const Survey = () => {
             <select
               name="adequateResources.housingInstability"
               value={formData.adequateResources.housingInstability}
-              onChange={(e) => handleNestedChange('adequateResources', 'housingInstability', e.target.value)}
+              onChange={(e) =>
+                handleNestedChange(
+                  "adequateResources",
+                  "housingInstability",
+                  e.target.value
+                )
+              }
             >
               <option value="">Select</option>
               <option value="Yes">Yes</option>
@@ -365,7 +490,13 @@ const Survey = () => {
             <select
               name="adequateResources.mentalHealth"
               value={formData.adequateResources.mentalHealth}
-              onChange={(e) => handleNestedChange('adequateResources', 'mentalHealth', e.target.value)}
+              onChange={(e) =>
+                handleNestedChange(
+                  "adequateResources",
+                  "mentalHealth",
+                  e.target.value
+                )
+              }
             >
               <option value="">Select</option>
               <option value="Yes">Yes</option>
@@ -378,7 +509,13 @@ const Survey = () => {
             <select
               name="adequateResources.healthcareAccess"
               value={formData.adequateResources.healthcareAccess}
-              onChange={(e) => handleNestedChange('adequateResources', 'healthcareAccess', e.target.value)}
+              onChange={(e) =>
+                handleNestedChange(
+                  "adequateResources",
+                  "healthcareAccess",
+                  e.target.value
+                )
+              }
             >
               <option value="">Select</option>
               <option value="Yes">Yes</option>
@@ -388,7 +525,9 @@ const Survey = () => {
           </div>
         </div>
 
-        <button type="submit" className="survey-submit-button">Submit Survey</button>
+        <button type="submit" className="survey-submit-button">
+          Submit Survey
+        </button>
       </form>
     </div>
   );
