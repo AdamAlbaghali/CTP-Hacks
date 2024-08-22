@@ -100,7 +100,7 @@ function Home() {
       {/* Features */}
       <section id="Features">
         <div className="container px-4 py-5 custom-border-top" id="featured-3">
-          <h2 className="pb-2 border-bottom">Columns with icons</h2>
+          <h2 className="pb-2 border-bottom">Student Support Services</h2>
           <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
             <div className="feature col">
               <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -108,11 +108,9 @@ function Home() {
                   <use xlinkHref="#collection"></use>
                 </svg>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">Food Security</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+              "Explore initiatives and resources available to address food insecurity among CUNY students, including food pantries and meal programs."
               </p>
             </div>
             <div className="feature col">
@@ -121,11 +119,9 @@ function Home() {
                   <use xlinkHref="#people-circle"></use>
                 </svg>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">Housing Stability</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+              "Learn about support services for students facing housing challenges, including emergency housing options and assistance programs."
               </p>
             </div>
             <div className="feature col">
@@ -134,11 +130,45 @@ function Home() {
                   <use xlinkHref="#toggles2"></use>
                 </svg>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+              <h3 className="fs-2 text-body-emphasis">Mental Health Support</h3>
               <p>
-                Paragraph of text beneath the heading to explain the heading.
-                We'll add onto it with another sentence and probably just keep
-                going until we run out of words.
+              "Discover the mental health resources available on campus, including counseling services, workshops, and peer support groups."
+              </p>
+            </div>
+
+            <div className="feature col">
+              <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg className="bi" width="1em" height="1em">
+                  <use xlinkHref="#toggles2"></use>
+                </svg>
+              </div>
+              <h3 className="fs-2 text-body-emphasis">Healthcare Access</h3>
+              <p>
+              "Find out how to access healthcare services through CUNY, including health centers, insurance information, and wellness programs."
+              </p>
+            </div>
+
+            <div className="feature col">
+              <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg className="bi" width="1em" height="1em">
+                  <use xlinkHref="#toggles2"></use>
+                </svg>
+              </div>
+              <h3 className="fs-2 text-body-emphasis">Student Advocacy</h3>
+              <p>
+              "Get involved in advocating for student needs, from participating in surveys to joining student-led initiatives aimed at improving campus resources."
+              </p>
+            </div>
+
+            <div className="feature col">
+              <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg className="bi" width="1em" height="1em">
+                  <use xlinkHref="#toggles2"></use>
+                </svg>
+              </div>
+              <h3 className="fs-2 text-body-emphasis">Resource Awareness</h3>
+              <p>
+              "Increase your awareness of the resources available to you at CUNY, ensuring you know where to turn for help when needed."
               </p>
             </div>
           </div>
