@@ -25,7 +25,7 @@ function AboutUs() {
       name: 'Gabriel Menkoff', 
       role: 'Back-End Developer', 
       image: pic3, 
-      bio: 'Hi everyone! I’m a senior at Brooklyn College, specializing in Data Science. This is my second hackathon, and I’m excited to dive into the project. For this event, I specialized in the backend, focusing on SQL to handle our data management. I was responsible for integrating the backend processes with the front end to ensure smooth connectivity and optimal performance. This role allowed me to ensure that our data systems were efficiently linked to the user interface, maintaining seamless functionality throughout the project.' 
+      bio: 'Hi everyone! I’m a senior at Brooklyn College, and I am mainly focused on learning data science. This is my third hackathon. For this event, I primarily worked on the backend, developing my skills with SQL, Node.js, Express, and related tools to handle our data management. I was responsible for integrating the backend processes with the front end to ensure smooth connectivity and optimal performance. This role allowed me to ensure that our data systems were efficiently linked to the user interface, maintaining seamless functionality throughout the project.' 
     },
     { 
       name: 'Carlo Ace Sagad', 

@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'terus1731',
+  password: '',
   database: 'my_database'
 });
 
@@ -75,6 +75,7 @@ app.post('/api/submit-survey', (req, res) => {
     res.status(201).json({ message: 'Survey submitted successfully!' });
   });
 });
+
 
 // GET endpoint to fetch survey data
 app.get('/api/survey-data', (req, res) => {

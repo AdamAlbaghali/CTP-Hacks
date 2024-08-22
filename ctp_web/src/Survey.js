@@ -39,13 +39,31 @@ const Survey = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Handle form submission logic here
+    //change form keys to match those in database
+    const submissionData = {
+      isCunyStudent: formData.isCunyStudent,
+      campus: formData.campus,
+      foodInsecurityAffect: formData.foodInsecurity,
+      housingInsecurityAffect: formData.housingInstability,
+      mentalHealthAffect: formData.mentalHealth,
+      healthcareAccessAffect: formData.healthcareAccess,
+      foodInsecurityAware: formData.awareness.foodInsecurity,
+      housingInsecurityAware: formData.awareness.housingInstability,
+      mentalHealthAware: formData.awareness.mentalHealth,
+      healthcareAccessAware: formData.awareness.healthcareAccess,
+      foodInsecurityAdequate: formData.adequateResources.foodInsecurity,
+      housingInsecurityAdequate: formData.adequateResources.housingInstability,
+      mentalHealthAdequate: formData.adequateResources.mentalHealth,
+      healthcareAccessAdequate: formData.adequateResources.healthcareAccess
+    };
+
+    //form submission logic, send POST request with survey data and indicate to the user if it was submitted succesfully
     try {
-      const response = await axios.post('http://localhost:3001/submit-survey', formData);
-      if (response.status === 200) {
+      const response = await axios.post('http://localhost:3001/api/submit-survey', submissionData);
+      if (response.status === 201) {
         alert('Survey submitted successfully!');
       } else {
-        alert('Error submitting survey');
+        alert('Error submitting survey')
       }
     } catch (error) {
       console.error('There was an error submitting the survey:', error);
