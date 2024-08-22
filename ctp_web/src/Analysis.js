@@ -106,8 +106,10 @@ const Analysis = () => {
   const mentalHealthInadequateCount = countMatches('mentalHealthAffect', 'mentalHealthAdequate');
   const healthcareAccessInadequateCount = countMatches('healthcareAccessAffect', 'healthcareAccessAdequate');
   
-  //store the above values in an object for comparison
+  //store the above values in an object for comparison and find the max and min #s
   const matchesVariables = {foodInsecurityInadequateCount, housingInsecurityInadequateCount, mentalHealthInadequateCount, healthcareAccessInadequateCount}
+  const maxInadequate = Math.max(foodInsecurityInadequateCount, housingInsecurityInadequateCount, mentalHealthInadequateCount, healthcareAccessInadequateCount);
+  const minInadequate = Math.min(foodInsecurityInadequateCount, housingInsecurityInadequateCount, mentalHealthInadequateCount, healthcareAccessInadequateCount);
 
   //feed the above object into the function to find the min and max value of these. then retrieve the proper name
   const maxInadequateVar = findMaxVariable(matchesVariables);
@@ -217,12 +219,12 @@ const Analysis = () => {
         <br></br>Surveyed CUNY students were mostly unware about resources for {minAwarenessText}. <br></br>
         </div>
         <div>
-          The {maxInadequateText} category had the most respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resourced.
+          The {maxInadequateText} category had the most respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resources with {maxInadequate}.
           <br></br>CUNY should focus on increasing widespread assistance for those who need it in this category especially.
         </div>
         <br></br>
         <div>
-          The {minInadequateText} category had the least respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resources.
+          The {minInadequateText} category had the least respondents who indicated that they are both personally negatively affected by it and that their campus has inadequate resources with {minInadequate}.
           <br></br>CUNY is doing a great job of providing aid to those who need it in this category!
         </div>
       </div>
