@@ -55,6 +55,9 @@ function Home() {
                   Survey
                 </a>
               </li>
+              <a href="/analysis" className="nav-link">
+                  Analysis
+                </a>
             </ul>
           </header>
         </div>
@@ -198,6 +201,11 @@ function Home() {
               <li className="nav-item">
                 <a href="/survey" className="nav-link px-2 text-body-secondary">
                   Survey
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/analysis" className="nav-link px-2 text-body-secondary">
+                  Analysis
                 </a>
               </li>
             </ul>
