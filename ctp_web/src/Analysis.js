@@ -184,12 +184,13 @@ const Analysis = () => {
         </div>
         <div className="analysis-text">
           The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with an average score of {maxAwareness}.
-        <br></br>It seems CUNY should focus on increasing awareness of resources for {maxAwarenessText}.
+        <br></br>It seems CUNY is doing a great job of creating awareness for {maxAwarenessText} resources!
         </div>
         <div className="analysis-text">
           The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with an average score of {minAwareness}.
-        <br></br>It seems CUNY is doing a great job of creating awareness for {minAwarenessText} resources!
+        <br></br>Surveyed CUNY students were mostly unware about resources for {minAwarenessText}. <br></br>
         </div>
+        <div></div>
       </div>
     </div>
   );
