@@ -9,7 +9,7 @@ function Home() {
         rel="stylesheet"
       />
 
-      {/* Custom Styles */}
+      {/* Custom */}
       <style>
         {`
           .nav-color {
@@ -30,7 +30,7 @@ function Home() {
         `}
       </style>
 
-      {/* Nav Bar */}
+      {/* Nav */}
       <section id="Header" className="nav-color fixed-top">
         <div className="container">
           <header className="d-flex justify-content-center py-3">
@@ -41,17 +41,17 @@ function Home() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <a href="/discussion" className="nav-link">
                   Discussion
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <a href="/about" className="nav-link">
                   About
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <a href="/survey" className="nav-link">
                   Survey
                 </a>
               </li>
@@ -60,7 +60,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Heroes Section */}
+      {/* Heroes */}
       <section id="Heroes">
         <div className="px-4 pt-5 my-5 text-center border-bottom">
           <h1 className="display-4 fw-bold text-body-emphasis">
@@ -96,7 +96,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section id="Features">
         <div className="container px-4 py-5 custom-border-top" id="featured-3">
           <h2 className="pb-2 border-bottom">Columns with icons</h2>
@@ -144,7 +144,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer Section */}
+      {/* Footer - will probably remove later */}
       <section id="Footer" className="footer-color">
         <div className="container custom-border-top">
           <footer className="py-3">
