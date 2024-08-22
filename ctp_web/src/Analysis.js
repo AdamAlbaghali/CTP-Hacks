@@ -78,11 +78,11 @@ const Analysis = () => {
   const variableDescriptions = {
     avgFoodInsecurityAffect: 'Food Insecurity',
     avgHousingInsecurityAffect: 'Housing Insecurity',
-    avgMentalHealthAffect: 'Mental Health',
+    avgMentalHealthAffect: 'Mental Health Treatment',
     avgHealthcareAccessAffect: 'Healthcare Access',
     avgFoodInsecurityAware: 'Food Insecurity',
     avgHousingInsecurityAware: 'Housing Insecurity',
-    avgMentalHealthAware: 'Mental Health',
+    avgMentalHealthAware: 'Mental Health Treatment',
     avgHealthcareAccessAware: 'Healthcare Access',
   };
   const maxAffectText = variableDescriptions[maxAffectVar] || 'Unknown';
@@ -96,12 +96,16 @@ const Analysis = () => {
       <h1>Analysis page</h1>
       <div>The category with the highest average score for "rate how much you are personally affected by each of the following" was {maxAffectText} with 
         an average score of {maxAffect}</div>
+      <div>Surveyed CUNY students feel more affected by a need for assistance with {maxAffectText} than any other category.</div><br />
       <div>The category with the lowest average score for "rate how much you are personally affected by each of the following" was {minAffectText} with 
         an average score of {minAffect}</div>
+      <div>Surveyed CUNY students have less issue with access to {minAffectText} than other categories. </div><br />
       <div>The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with 
         an average score of {maxAwareness}</div>
+      <div>It seems CUNY should focus on increasing awareness of resources for {maxAwarenessText}.</div><br />
       <div>The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with 
         an average score of {minAwareness}</div>
+      <div>It seems CUNY is doing a great job of creating awareness for {minAwarenessText} resources!</div><br />
     </header>
   );
   
