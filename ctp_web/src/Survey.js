@@ -193,11 +193,31 @@ const Survey = () => {
           >
             <option value="">Select your campus</option>
             <option value="Baruch College">Baruch College</option>
+            <option value="Borough of Manhattan Community College">Borough of Manhattan Community College</option>
+            <option value="Bronx Community College">Bronx Community College</option>
             <option value="Brooklyn College">Brooklyn College</option>
-            <option value="City College">City College</option>
+            <option value="College of Staten Island">College of Staten Island</option>
+            <option value="Craig Newmark Graduate School of Journalism">Craig Newmark Graduate School of Journalism</option>
+            <option value="CUNY Graduate Center">CUNY Graduate Center</option>
+            <option value="CUNY Graduate School of Public Health and Health Policy">CUNY Graduate School of Public Health and Health Policy</option>
+            <option value="CUNY School of Labor and Urban Studies">CUNY School of Labor and Urban Studies</option>
+            <option value="CUNY School of Law">CUNY School of Law</option>
+            <option value="CUNY School of Professional Studies">CUNY School of Professional Studies</option>
+            <option value="Guttman Community College">Guttman Community College</option>
+            <option value="Hostos Community College">Hostos Community College</option>
             <option value="Hunter College">Hunter College</option>
+            <option value="John Jay College of Criminal Justice">John Jay College of Criminal Justice</option>
+            <option value="Kingsborough Community College">Kingsborough Community College</option>
+            <option value="LaGuardia Community College">LaGuardia Community College</option>
+            <option value="Lehman College">Lehman College</option>
+            <option value="Macaulay Honors College">Macaulay Honors College</option>
+            <option value="Medgar Evers College">Medgar Evers College</option>
+            <option value="New York City College of Technology">New York City College of Technology</option>
+            <option value="Brooklyn College">Brooklyn College</option>
             <option value="Queens College">Queens College</option>
-            <option value="Other">Other</option>
+            <option value="Queensborough Community College">Queensborough Community College</option>
+            <option value="The City College of New York">The City College of New York</option>
+            <option value="York College">York College</option>
           </select>
         </div>
 
