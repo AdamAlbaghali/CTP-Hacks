@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'terus1731',
   database: 'my_database'
 });
 
@@ -31,37 +31,61 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
-app.post('/api/submit-form', (req, res) => {
-    const { name, email, message } = req.body;
-  
-    const sql = 'INSERT INTO form_data (name, email, message) VALUES (?, ?, ?)';
-    db.query(sql, [name, email, message], (err, result) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to submit form' });
-      }
-      res.status(201).json({ message: 'Form submitted successfully!' });
-    });
+// POST endpoint to submit survey data
+app.post('/api/submit-survey', (req, res) => {
+  const {
+    isCunyStudent,
+    campus,
+    foodInsecurityAffect,
+    housingInsecurityAffect,
+    mentalHealthAffect,
+    healthcareAccessAffect,
+    foodInsecurityAware,
+    housingInsecurityAware,
+    mentalHealthAware,
+    healthcareAccessAware,
+    foodInsecurityAdequate,
+    housingInsecurityAdequate,
+    mentalHealthAdequate,
+    healthcareAccessAdequate,
+  } = req.body;
+
+  const sql = `
+    INSERT INTO survey_answers (
+      isCunyStudent, campus, foodInsecurityAffect, housingInsecurityAffect, 
+      mentalHealthAffect, healthcareAccessAffect, foodInsecurityAware, 
+      housingInsecurityAware, mentalHealthAware, healthcareAccessAware, 
+      foodInsecurityAdequate, housingInsecurityAdequate, mentalHealthAdequate, 
+      healthcareAccessAdequate
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  const values = [
+    isCunyStudent, campus, foodInsecurityAffect, housingInsecurityAffect,
+    mentalHealthAffect, healthcareAccessAffect, foodInsecurityAware,
+    housingInsecurityAware, mentalHealthAware, healthcareAccessAware,
+    foodInsecurityAdequate, housingInsecurityAdequate, mentalHealthAdequate,
+    healthcareAccessAdequate
+  ];
+
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to submit survey' });
+    }
+    res.status(201).json({ message: 'Survey submitted successfully!' });
+  });
 });
 
-app.get('/api/form-data', (req, res) => {
-    const sql = 'SELECT * FROM form_data';
-    db.query(sql, (err, results) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to fetch form data' });
-      }
-      res.status(200).json(results);
-    });
+// GET endpoint to fetch survey data
+app.get('/api/survey-data', (req, res) => {
+  const sql = 'SELECT * FROM survey_answers';
+  db.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to fetch survey data' });
+    }
+    res.status(200).json(results);
+  });
 });
+
   
-app.delete('/api/form-data/:id', (req, res) => {
-    const { id } = req.params;
-  
-    const sql = 'DELETE FROM form_data WHERE id = ?';
-    db.query(sql, [id], (err, result) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to delete form data' });
-      }
-      res.status(200).json({ message: 'Form data deleted successfully!' });
-    });
-});
   
