@@ -92,25 +92,115 @@ const Analysis = () => {
 
 
   return (
-    <header>
-      <h1>Analysis page</h1>
-      <div>The category with the highest average score for "rate how much you are personally affected by each of the following" was {maxAffectText} with 
-        an average score of {maxAffect}</div>
-      <div>Surveyed CUNY students feel more affected by a need for assistance with {maxAffectText} than any other category.</div><br />
-      <div>The category with the lowest average score for "rate how much you are personally affected by each of the following" was {minAffectText} with 
-        an average score of {minAffect}</div>
-      <div>Surveyed CUNY students have less issue with access to {minAffectText} than other categories. </div><br />
-      <div>The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with 
-        an average score of {maxAwareness}</div>
-      <div>It seems CUNY should focus on increasing awareness of resources for {maxAwarenessText}.</div><br />
-      <div>The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with 
-        an average score of {minAwareness}</div>
-      <div>It seems CUNY is doing a great job of creating awareness for {minAwarenessText} resources!</div><br />
-    </header>
+    <div>
+      {/* Bootstrap CSS */}
+      <link
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+
+      {/* Custom Styles */}
+      <style>
+        {`
+          .nav-color {
+            background: #f76b8a;
+          }
+          body {
+            background: #fcfefe;
+          }
+          .nav-link {
+            color: aliceblue;
+          }
+          .custom-border-top {
+            border-top: 0.5px solid #4c4b4b; /* Change to your desired color */
+          }
+          .footer-color {
+            background: #f76b8a;
+          }
+          .analysis-container {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 80px auto;
+          }
+          .analysis-header {
+            color: #f76b8a;
+            margin-bottom: 20px;
+            text-align: center;
+          }
+          .analysis-text {
+            margin-bottom: 20px;
+            color: #333;
+          }
+        `}
+      </style>
+
+      {/* Nav Bar */}
+      <section id="Header" className="nav-color fixed-top">
+        <div className="container">
+          <header className="d-flex justify-content-center py-3">
+            <ul className="nav nav-pills">
+              <li className="nav-item">
+                <a href="/" className="nav-link">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/discussion" className="nav-link">
+                  Discussion
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/about" className="nav-link">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/survey" className="nav-link">
+                  Survey
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/analysis" className="nav-link active">
+                  Analysis
+                </a>
+              </li>
+            </ul>
+          </header>
+        </div>
+      </section>
+
+      <div className="analysis-container">
+        <h1 className="analysis-header">Analysis Page</h1>
+        <div className="analysis-text">
+          The category with the highest average score for "rate how much you are personally affected by each of the following" was {maxAffectText} with an average score of {maxAffect}.
+        </div>
+        <div className="analysis-text">
+          Surveyed CUNY students feel more affected by a need for assistance with {maxAffectText} than any other category.
+        </div>
+        <div className="analysis-text">
+          The category with the lowest average score for "rate how much you are personally affected by each of the following" was {minAffectText} with an average score of {minAffect}.
+        </div>
+        <div className="analysis-text">
+          Surveyed CUNY students have fewer issues with access to {minAffectText} than other categories.
+        </div>
+        <div className="analysis-text">
+          The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with an average score of {maxAwareness}.
+        </div>
+        <div className="analysis-text">
+          It seems CUNY should focus on increasing awareness of resources for {maxAwarenessText}.
+        </div>
+        <div className="analysis-text">
+          The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with an average score of {minAwareness}.
+        </div>
+        <div className="analysis-text">
+          It seems CUNY is doing a great job of creating awareness for {minAwarenessText} resources!
+        </div>
+      </div>
+    </div>
   );
-  
-
-
 };
 
 export default Analysis;
