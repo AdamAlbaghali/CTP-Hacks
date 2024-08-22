@@ -153,7 +153,7 @@ const Analysis = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/about" className="nav-link">
+                <a href="/aboutus" className="nav-link">
                   About
                 </a>
               </li>
