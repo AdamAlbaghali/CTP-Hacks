@@ -51,7 +51,7 @@ function AboutUs() {
       <style>
         {`
           .nav-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           body {
             background: #fcfefe;

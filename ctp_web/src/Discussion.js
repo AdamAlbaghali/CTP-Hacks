@@ -13,7 +13,7 @@ function Discussion() {
       <style>
         {`
           .nav-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           body {
             background: #fcfefe;
@@ -22,7 +22,7 @@ function Discussion() {
             color: aliceblue;
           }
           .footer-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           .custom-image {
             position: relative;

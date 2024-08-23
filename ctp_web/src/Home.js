@@ -13,7 +13,7 @@ function Home() {
       <style>
         {`
           .nav-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           body {
             background: #fcfefe;
@@ -25,7 +25,7 @@ function Home() {
             border-top: 0.5px solid #4c4b4b; /* Change to your desired color */
           }
           .footer-color {
-            background: #f76b8a;
+            background: #73937E;
           }
         `}
       </style>

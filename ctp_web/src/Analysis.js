@@ -131,7 +131,7 @@ const Analysis = () => {
       <style>
         {`
           .nav-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           body {
             background: #fcfefe;
@@ -154,7 +154,7 @@ const Analysis = () => {
             margin: 80px auto;
           }
           .analysis-header {
-            color: #f76b8a;
+            color: #73937E;
             margin-bottom: 20px;
             text-align: center;
           }

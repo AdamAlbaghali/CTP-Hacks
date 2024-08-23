@@ -68,6 +68,7 @@ const Survey = () => {
       );
       if (response.status === 201) {
         alert("Survey submitted successfully!");
+        window.location.href = '/analysis'; // Redirect to /analysis
       } else {
         alert("Error submitting survey");
       }
@@ -111,7 +112,7 @@ const Survey = () => {
       <style>
         {`
           .nav-color {
-            background: #f76b8a;
+            background: #73937E;
           }
           body {
             background: #fcfefe;
@@ -149,11 +150,11 @@ const Survey = () => {
             border: 1px solid #ccc;
           }
           .survey-section h3 {
-            color: #f76b8a;
+            color: #73937E;
             margin-top: 30px;
           }
           .survey-submit-button {
-            background-color: #f76b8a;
+            background-color: #73937E;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -161,9 +162,7 @@ const Survey = () => {
             border-radius: 4px;
             cursor: pointer;
           }
-          .survey-submit-button:hover {
-            background-color: #d65d78;
-          }
+          
         `}
       </style>
 
@@ -193,15 +192,15 @@ const Survey = () => {
                 </a>
               </li>
               <a href="/analysis" className="nav-link">
-                  Analysis
-                </a>
+                Analysis
+              </a>
             </ul>
           </header>
         </div>
       </section>
 
       <form className="survey-container" onSubmit={handleSubmit}>
-        <h2 className="text-center" style={{ color: "#f76b8a" }}>
+        <h2 className="text-center" style={{ color: "#73937E" }}>
           CUNY Resources Survey
         </h2>
 
@@ -285,8 +284,8 @@ const Survey = () => {
 
         <div className="survey-section">
           <h3>
-            3. On a scale of 1-5, rate how much you are personally negatively affected by
-            each of the following:
+            3. On a scale of 1-5, rate how much you are personally negatively
+            affected by each of the following:
           </h3>
           <div className="survey-question">
             <label>3.1 Food insecurity</label>
@@ -528,9 +527,11 @@ const Survey = () => {
           </div>
         </div>
 
-        <button type="submit" className="survey-submit-button">
-          Submit Survey
-        </button>
+        <a href="/analysis"  style={{ textDecoration: 'none' }}>
+          <button type="submit" className="survey-submit-button">
+            Submit Survey
+          </button>
+          </a>
       </form>
     </div>
   );
