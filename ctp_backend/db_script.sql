@@ -1,6 +1,4 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-
+use database my_database
 CREATE TABLE survey_answers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     isCunyStudent VARCHAR(10) NOT NULL,            -- 'Yes' or 'No'
@@ -18,4 +16,3 @@ CREATE TABLE survey_answers (
     mentalHealthAdequate VARCHAR(10) NOT NULL,     -- 'Yes', 'No', or 'Not Sure'
     healthcareAccessAdequate VARCHAR(10) NOT NULL  -- 'Yes', 'No', or 'Not Sure'
 );
-COMMIT;
