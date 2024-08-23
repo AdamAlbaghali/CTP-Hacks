@@ -205,7 +205,7 @@ const Survey = () => {
         </h2>
 
         <div className="survey-question">
-          <h3>1. asdasdsadAre you a current CUNY student?</h3>
+          <h3>1. Are you a current CUNY student?</h3>
           <select
             name="isCunyStudent"
             value={formData.isCunyStudent}
