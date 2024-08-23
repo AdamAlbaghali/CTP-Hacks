@@ -1,7 +1,7 @@
 CTP Hackathon 2024
-
-FrontEnd:
--First Cd into ctp_web and then do npm install
+You have to deploy the backend using localhost while the front end is already deployed.
+FrontEnd: (Is Deployed --> https://ctp-hacks-code-rangers.vercel.app)
+-(For LocalHost only) First Cd into ctp_web and then do npm install
 -Then do npm start
 
 Backend:
