@@ -203,19 +203,19 @@ const Analysis = () => {
       <div className="analysis-container">
         <h1 className="analysis-header">Analysis Page</h1>
         <div className="analysis-text">
-          The category with the highest average score for "rate how much you are personally affected by each of the following" was {maxAffectText} with an average score of {maxAffect}.toFixed(2).
+          The category with the highest average score for "rate how much you are personally affected by each of the following" was {maxAffectText} with an average score of {maxAffect.toFixed(2)}.
           <br></br>Surveyed CUNY students feel more affected by a need for assistance with {maxAffectText} than any other category.
         </div>
         <div className="analysis-text">
-          The category with the lowest average score for "rate how much you are personally affected by each of the following" was {minAffectText} with an average score of {minAffect}.toFixed(2).
+          The category with the lowest average score for "rate how much you are personally affected by each of the following" was {minAffectText} with an average score of {minAffect.toFixed(2)}.
           <br></br>Surveyed CUNY students have fewer issues with access to {minAffectText} than other categories.
         </div>
         <div className="analysis-text">
-          The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with an average score of {maxAwareness}.toFixed(2).
+          The category with the highest average score for "rate how aware you are about CUNY resources for each of the following" was {maxAwarenessText} with an average score of {maxAwareness.toFixed(2)}.
         <br></br>It seems CUNY is doing a great job of creating awareness for {maxAwarenessText} resources!
         </div>
         <div className="analysis-text">
-          The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with an average score of {minAwareness}.toFixed(2).
+          The category with the lowest average score for "rate how aware you are about CUNY resources for each of the following" was {minAwarenessText} with an average score of {minAwareness.toFixed(2)}.
         <br></br>Surveyed CUNY students were mostly unware about resources for {minAwarenessText}. <br></br>
         </div>
         <div>
